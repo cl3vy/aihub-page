@@ -3,8 +3,9 @@
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import Image from 'next/image';
 import { AnimatePresence, motion } from 'framer-motion';
-import Logo from './Logo';
+import { LOGO } from '@/lib/content';
 
 const PAGES: [string, string][] = [
   ['About', '/about'],
@@ -40,8 +41,9 @@ export default function Nav() {
       <header className={`nav${solid ? ' solid' : ''}`}>
         <div className="nav-inner">
           <Link className="logo" href="/" aria-label="AI Hub home">
-            <Logo size={30} idSuffix="nav" />
-            <span className="word">AI Hub</span>
+            <span className="brand-logo">
+              <Image src={LOGO.landscape} alt="AI Hub" fill sizes="160px" priority />
+            </span>
           </Link>
           <nav className="nav-links">
             {PAGES.map(([t, h]) => (

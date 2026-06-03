@@ -7,31 +7,31 @@ import ValueGrid from '@/components/ValueGrid';
 import PartnerWall from '@/components/PartnerWall';
 import {
   Eyebrow,
-  ImageSlot,
+  Photo,
   TextLink,
   PageHeader,
   CtaBand,
 } from '@/components/ui/primitives';
-import { VALUES } from '@/lib/content';
+import { VALUES, IMG } from '@/lib/content';
 
 export const metadata: Metadata = {
   title: 'About',
   description:
-    'The story, mission, values, team and reach of AI Hub — a non-profit advancing AI in Albania and its diaspora.',
+    'The story, mission, values, team and reach of AI Hub, a non-profit advancing AI in Albania and its diaspora.',
 };
 
 const REACH = [
-  ['HQ', 'Tirana, Albania', 'Home base — research, community, programs.'],
+  ['HQ', 'Tirana, Albania', 'Home base: research, community, programs.'],
   ['DIASPORA', 'Munich · San Francisco', 'Engineering and research talent abroad, contributing back.'],
   ['NETWORK', '9 universities', 'Academic partners across the country.'],
 ];
 
 const MILESTONES: Milestone[] = [
-  { date: 'FOUNDING', title: 'AI Hub is established', body: 'A non-profit formed to build a collaborative AI community in Albania and bridge research with real-world application.', image: 'PHOTO · founding' },
+  { date: 'FOUNDING', title: 'AI Hub is established', body: 'A non-profit formed to build a collaborative AI community in Albania and bridge research with real-world application.', photo: IMG.discussion, photoAlt: 'AI Hub members at the community space' },
   { date: 'COMMUNITY', title: 'First meetups & growth to 1,000+ members', body: 'Regular gatherings, talks and workshops grow the community across the country and the diaspora.' },
   { date: 'PARTNERSHIPS', title: '9 universities & 20+ partners join', body: 'Academic and institutional partnerships form the backbone of the research and education programs.' },
-  { date: 'MAR 3, 2026', title: 'GDG Tirana Official Kickoff Meetup', body: 'Featuring the talk “The AI Wave: How Individuals Create Impact Today,” with Rome Business School context.', image: 'PHOTO · GDG Tirana kickoff' },
-  { date: 'NEXT', title: 'What comes next', body: <span className="slot">[ Upcoming milestone — to be added ]</span> },
+  { date: 'MAR 3, 2026', title: 'GDG Tirana Official Kickoff Meetup', body: 'Featuring the talk “The AI Wave: How Individuals Create Impact Today,” with Rome Business School context.', photo: IMG.eventTalk, photoAlt: 'AI Hub Albania kickoff meetup' },
+  { date: 'NEXT', title: 'What comes next', body: <span className="slot">[ Upcoming milestone, to be added ]</span> },
 ];
 
 export default function AboutPage() {
@@ -41,7 +41,7 @@ export default function AboutPage() {
         watermark="ABOUT"
         eyebrow="About AI Hub"
         title="A research community, built to bridge AI and real life."
-        lede="AI Hub is a non-profit fostering an open, collaborative AI community — connecting researchers, engineers, educators and policymakers across Albania and its diaspora."
+        lede="AI Hub is a non-profit fostering an open, collaborative AI community, connecting researchers, engineers, educators and policymakers across Albania and its diaspora."
       />
 
       {/* ORIGIN */}
@@ -49,16 +49,22 @@ export default function AboutPage() {
         <div className="wrap">
           <div className="split">
             <Reveal>
-              <ImageSlot label="TREATED PHOTO · founders / early meetup" ratio="tall" />
+              <Photo
+                src={IMG.officeMeeting}
+                alt="AI Hub founders and members meeting at the office"
+                ratio="tall"
+                priority
+                sizes="(max-width: 900px) 100vw, 45vw"
+              />
               <div className="caption">
-                <span className="dot">●</span> AI Hub founding gathering · Tirana · [date]
+                <span className="dot">●</span> AI Hub HQ · Tirana
               </div>
             </Reveal>
             <Reveal delay={120}>
               <Eyebrow>Our story</Eyebrow>
               <h2 className="display-l">Founded to grow what Albania was missing.</h2>
               <p className="mt-m">
-                AI Hub was founded to build a thriving, collaborative AI community in Albania — a
+                AI Hub was founded to build a thriving, collaborative AI community in Albania, a
                 place where research and real-world application meet. We bring together people who
                 believe the country and its diaspora can do world-class work in artificial
                 intelligence.
@@ -66,12 +72,30 @@ export default function AboutPage() {
               <p>
                 As a non-profit, our purpose is not commercial. It is to accelerate responsible AI
                 development: to educate, to convene, to publish, and to put research to work on
-                problems that matter — from public services to public health.
+                problems that matter, from public services to public health.
               </p>
               <TextLink href="/research" className="mt-s">
                 See what we research
               </TextLink>
             </Reveal>
+          </div>
+        </div>
+      </section>
+
+      {/* TEAM BANNER */}
+      <section className="section-tight" style={{ paddingTop: 0 }}>
+        <div className="wrap">
+          <Reveal className="photo-band">
+            <Photo
+              src={IMG.teamGroup}
+              alt="The AI Hub team and community in Tirana"
+              ratio="cine"
+              sizes="100vw"
+              graded={false}
+            />
+          </Reveal>
+          <div className="caption">
+            <span className="dot">●</span> The people of AI Hub · Tirana
           </div>
         </div>
       </section>
@@ -163,7 +187,7 @@ export default function AboutPage() {
             <PartnerWall count={20} />
           </Reveal>
           <p className="caption" style={{ justifyContent: 'center', marginTop: 20 }}>
-            Logos shown as placeholders — partner lockups to be added.
+            Logos shown as placeholders; partner lockups to be added.
           </p>
         </div>
       </section>

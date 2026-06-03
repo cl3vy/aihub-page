@@ -10,13 +10,13 @@ import {
   Eyebrow,
   Button,
   TextLink,
-  ImageSlot,
+  Photo,
   Tag,
   Chip,
   SectionHead,
   CtaBand,
 } from '@/components/ui/primitives';
-import { VOICES, ACTIVITY_BARS } from '@/lib/content';
+import { VOICES, ACTIVITY_BARS, IMG } from '@/lib/content';
 
 const DASH_STATS: [number, string, string | undefined][] = [
   [1000, 'Community members', '+'],
@@ -37,7 +37,7 @@ export default function Home() {
             <Reveal>
               <Eyebrow>Our mission</Eyebrow>
               <h2 className="display-l">
-                A thriving, collaborative AI community — turning research into impact for Albania.
+                A thriving, collaborative AI community, turning research into impact for Albania.
               </h2>
               <p className="lede mt-m">
                 We exist to bridge the gap between AI research and real-world application, and to
@@ -49,9 +49,14 @@ export default function Home() {
               </TextLink>
             </Reveal>
             <Reveal delay={120}>
-              <ImageSlot label="TREATED PHOTO · community / workshop" ratio="tall" />
+              <Photo
+                src={IMG.officeMeeting}
+                alt="AI Hub team meeting at the Tirana office"
+                ratio="tall"
+                sizes="(max-width: 900px) 100vw, 45vw"
+              />
               <div className="caption">
-                <span className="dot">●</span> AI Hub community gathering · Tirana · [date]
+                <span className="dot">●</span> AI Hub HQ · Tirana
               </div>
             </Reveal>
           </div>
@@ -123,7 +128,7 @@ export default function Home() {
           />
           <div className="grid g-3 mt-l">
             <Reveal className="card proj-card">
-              <div className="img-slot" data-label="PROJECT HERO · [slot]" />
+              <Photo src={IMG.eventTalk} alt="AI Hub Albania community talk" ratio="4x3" sizes="(max-width: 900px) 100vw, 33vw" />
               <div className="pc-body">
                 <div className="pc-tags">
                   <Tag>Governance</Tag>
@@ -139,7 +144,7 @@ export default function Home() {
               </div>
             </Reveal>
             <Reveal delay={100} className="card proj-card">
-              <div className="img-slot" data-label="PROJECT HERO · [slot]" />
+              <Photo src={IMG.panelClimate} alt="Climate resilience panel discussion" ratio="4x3" sizes="(max-width: 900px) 100vw, 33vw" />
               <div className="pc-body">
                 <div className="pc-tags">
                   <Tag>Environment</Tag>
@@ -174,14 +179,14 @@ export default function Home() {
           <div className="grid g-2 mt-l">
             <Reveal className="card frame" style={{ overflow: 'hidden' }}>
               <Link href="/programs">
-                <div className="img-slot ratio-wide" data-label="PHOTO · founders / accelerator" />
+                <Photo src={IMG.networking} alt="AI Hub founders networking" ratio="wide" sizes="(max-width: 900px) 100vw, 50vw" />
                 <div style={{ padding: 28 }}>
-                  <div className="kicker-num">01 — Startup &amp; Innovation</div>
+                  <div className="kicker-num">01 · Startup &amp; Innovation</div>
                   <h3 className="display-s" style={{ marginTop: 10 }}>
                     Incubator &amp; Accelerator
                   </h3>
                   <p className="muted" style={{ fontSize: 15 }}>
-                    Guidance, technology access, funding connections and investor networking —
+                    Guidance, technology access, funding connections and investor networking,
                     bridging research to globally competitive AI startups.
                   </p>
                   <span className="textlink">
@@ -192,14 +197,14 @@ export default function Home() {
             </Reveal>
             <Reveal delay={120} className="card frame" style={{ overflow: 'hidden' }}>
               <Link href="/programs">
-                <div className="img-slot ratio-wide" data-label="PHOTO · bootcamp / classroom" />
+                <Photo src={IMG.mentorship} alt="Mentorship session at an AI Hub bootcamp" ratio="wide" sizes="(max-width: 900px) 100vw, 50vw" />
                 <div style={{ padding: 28 }}>
-                  <div className="kicker-num">02 — Education &amp; Training</div>
+                  <div className="kicker-num">02 · Education &amp; Training</div>
                   <h3 className="display-s" style={{ marginTop: 10 }}>
                     Education &amp; Training
                   </h3>
                   <p className="muted" style={{ fontSize: 15 }}>
-                    Certifications, bootcamps and mentorship — with dedicated tracks for women,
+                    Certifications, bootcamps and mentorship, with dedicated tracks for women,
                     minorities and underserved communities.
                   </p>
                   <span className="textlink">
@@ -246,7 +251,7 @@ export default function Home() {
               <Eyebrow>Next event</Eyebrow>
               <Tag>Meetup</Tag>
               <h2 className="display-l" style={{ marginTop: 18 }}>
-                GDG Tirana — Official Kickoff Meetup
+                GDG Tirana: Official Kickoff Meetup
               </h2>
               <p className="lede mt-s">
                 Featuring the talk{' '}
@@ -266,12 +271,29 @@ export default function Home() {
               </div>
             </Reveal>
             <Reveal delay={120}>
-              <ImageSlot label="EVENT PHOTO · GDG Tirana kickoff" ratio="wide" />
+              <Photo src={IMG.eventTalk} alt="AI Hub Albania kickoff meetup" ratio="wide" sizes="(max-width: 900px) 100vw, 50vw" />
               <div className="caption">
-                <span className="dot">●</span> GDG Tirana Kickoff · Mar 3 2026 · Tirana
+                <span className="dot">●</span> AI Hub Albania meetup · Tirana
               </div>
             </Reveal>
           </div>
+        </div>
+      </section>
+
+      {/* COMMUNITY IN ACTION */}
+      <section className="section">
+        <div className="wrap">
+          <SectionHead
+            eyebrow="In the room"
+            title="A community in action."
+            action={<TextLink href="/events">See all events</TextLink>}
+          />
+          <Reveal className="gallery-strip mt-l">
+            <Photo src={IMG.eventTalk} alt="AI Hub Albania talk" ratio="4x3" sizes="(max-width: 900px) 50vw, 25vw" />
+            <Photo src={IMG.audienceFront} alt="Engaged audience at an AI Hub event" ratio="4x3" sizes="(max-width: 900px) 50vw, 25vw" />
+            <Photo src={IMG.conference} alt="AI Hub conference" ratio="4x3" sizes="(max-width: 900px) 50vw, 25vw" />
+            <Photo src={IMG.graduation} alt="AI Hub cohort graduation" ratio="4x3" sizes="(max-width: 900px) 50vw, 25vw" />
+          </Reveal>
         </div>
       </section>
 

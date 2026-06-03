@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import Reveal from '@/components/ui/Reveal';
 import Timeline, { type Milestone } from '@/components/Timeline';
 import ValueGrid from '@/components/ValueGrid';
@@ -8,11 +9,11 @@ import {
   Tag,
   Chip,
   TextLink,
-  ImageSlot,
+  Photo,
   PageHeader,
   CtaBand,
 } from '@/components/ui/primitives';
-import { FORMATS } from '@/lib/content';
+import { FORMATS, IMG } from '@/lib/content';
 
 export const metadata: Metadata = {
   title: 'Events',
@@ -28,10 +29,10 @@ const PAST = [
 ];
 
 const TIMELINE: Milestone[] = [
-  { date: 'MAR 3, 2026', title: 'GDG Tirana Official Kickoff', body: '“The AI Wave” keynote and the launch of the local developer community.', image: 'PHOTO · kickoff' },
+  { date: 'MAR 3, 2026', title: 'GDG Tirana Official Kickoff', body: '“The AI Wave” keynote and the launch of the local developer community.', photo: IMG.eventTalk, photoAlt: 'AI Hub Albania kickoff' },
   { date: 'EARLIER', title: 'Community meetups', body: 'Regular gatherings that grew AI Hub to 1,000+ members.' },
-  { date: 'EARLIER', title: 'Workshops & talks', body: <>Hands-on sessions across the research domains. <span className="slot" style={{ display: 'block', marginTop: 8 }}>[ Recap &amp; gallery — to be added ]</span></> },
-  { date: 'NEXT', title: 'Upcoming event', body: <span className="slot">[ Date · title · venue — to be announced ]</span> },
+  { date: 'EARLIER', title: 'Workshops & talks', body: <>Hands-on sessions across the research domains. <span className="slot" style={{ display: 'block', marginTop: 8 }}>[ Recap &amp; gallery, to be added ]</span></> },
+  { date: 'NEXT', title: 'Upcoming event', body: <span className="slot">[ Date · title · venue, to be announced ]</span> },
 ];
 
 export default function EventsPage() {
@@ -41,7 +42,7 @@ export default function EventsPage() {
         watermark="EVENTS"
         eyebrow="Events"
         title="Where the community shows up."
-        lede="Meetups, hackathons, public lectures, policy discussions and workshops — momentum you can see and attend."
+        lede="Meetups, hackathons, public lectures, policy discussions and workshops. Momentum you can see and attend."
       />
 
       {/* NEXT EVENT */}
@@ -54,14 +55,14 @@ export default function EventsPage() {
             <div style={{ padding: 'clamp(30px,4vw,52px)' }}>
               <Tag>Meetup</Tag>
               <h2 className="display-l" style={{ marginTop: 16 }}>
-                GDG Tirana — Official Kickoff Meetup
+                GDG Tirana: Official Kickoff Meetup
               </h2>
               <p className="lede mt-s">
                 The talk{' '}
                 <span className="serif-italic">
                   “The AI Wave: How Individuals Create Impact Today”
                 </span>{' '}
-                by Emiliano Mankolli, PhD — with Rome Business School context.
+                by Emiliano Mankolli, PhD, with Rome Business School context.
               </p>
               <div className="flex mt-m" style={{ gap: 12, flexWrap: 'wrap' }}>
                 <Chip>Mar 3, 2026</Chip>
@@ -74,7 +75,15 @@ export default function EventsPage() {
                 </Button>
               </div>
             </div>
-            <div className="img-slot frame" data-label="EVENT PHOTO · GDG Tirana kickoff" style={{ minHeight: 260 }} />
+            <div style={{ position: 'relative', minHeight: 280 }}>
+              <Image
+                src={IMG.eventTalk}
+                alt="GDG Tirana kickoff meetup"
+                fill
+                sizes="(max-width: 760px) 100vw, 45vw"
+                style={{ objectFit: 'cover' }}
+              />
+            </div>
           </Reveal>
         </div>
       </section>
@@ -114,7 +123,7 @@ export default function EventsPage() {
                 </Reveal>
               ) : (
                 <Reveal key={p.t} delay={(i % 3) * 90} className="card event-card">
-                  <div className="img-slot" data-label="EVENT PHOTO · [slot]" />
+                  <Photo src={IMG.audience1} alt={p.t} ratio="4x3" sizes="(max-width: 900px) 100vw, 33vw" />
                   <div className="ec-body">
                     <div className="caption" style={{ margin: 0 }}>
                       {p.m}

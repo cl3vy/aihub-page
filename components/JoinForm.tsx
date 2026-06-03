@@ -35,7 +35,7 @@ export default function JoinForm() {
         Request to join <span className="arrow">→</span>
       </button>
       <p className="caption" style={{ justifyContent: 'center', marginTop: 14 }}>
-        [ Connected to membership intake — slot ]
+        [ Connected to membership intake, slot ]
       </p>
     </form>
   );

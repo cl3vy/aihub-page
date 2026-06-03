@@ -1,7 +1,8 @@
 'use client';
 
 import Link from 'next/link';
-import Logo from './Logo';
+import Image from 'next/image';
+import { LOGO } from '@/lib/content';
 
 export default function Footer() {
   return (
@@ -10,8 +11,9 @@ export default function Footer() {
         <div className="footer-top">
           <div>
             <Link className="logo" href="/">
-              <Logo size={38} idSuffix="foot" />
-              <span className="word">AI Hub</span>
+              <span className="brand-logo">
+                <Image src={LOGO.landscape} alt="AI Hub" fill sizes="200px" />
+              </span>
             </Link>
             <p className="mission">Where AI meets ethics, innovation, and impact.</p>
             <p style={{ fontSize: '14px', maxWidth: '30ch', color: 'rgba(255,255,255,0.55)' }}>

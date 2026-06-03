@@ -4,11 +4,12 @@ import Pipeline, { type Stage } from '@/components/Pipeline';
 import {
   Eyebrow,
   Button,
-  ImageSlot,
+  Photo,
   Chip,
   PageHeader,
   CtaBand,
 } from '@/components/ui/primitives';
+import { IMG } from '@/lib/content';
 
 export const metadata: Metadata = {
   title: 'Programs',
@@ -18,7 +19,7 @@ export const metadata: Metadata = {
 
 const INC: Stage[] = [
   { step: 'STAGE 01', title: 'Intake', body: 'Founders and research teams apply with an idea or early prototype.' },
-  { step: 'STAGE 02', title: 'Incubate', body: 'Guidance, technology access and mentorship to find product–market fit.' },
+  { step: 'STAGE 02', title: 'Incubate', body: 'Guidance, technology access and mentorship to find product market fit.' },
   { step: 'STAGE 03', title: 'Accelerate', body: 'Business development, funding connections and investor networking.' },
   { step: 'STAGE 04', title: 'Launch', body: 'A globally competitive AI company, ready to scale.' },
 ];
@@ -30,9 +31,9 @@ const INC_CARDS: [string, string][] = [
 ];
 
 const EDU: [string, string, string, string][] = [
-  ['PHOTO · certification', 'AI ethics & development certifications', 'Structured credentials in both responsible AI and hands-on development.', 'Outcome: certified practitioners'],
-  ['PHOTO · bootcamp', 'Coding bootcamps & mentorship', 'Free and low-cost bootcamps with mentorship for women, minorities and underserved communities.', 'Outcome: job-ready skills'],
-  ['PHOTO · classroom', 'AI-powered education tools', 'Platforms for local schools and digital-literacy outreach in rural areas.', 'Outcome: wider access'],
+  [IMG.graduation, 'AI ethics & development certifications', 'Structured credentials in both responsible AI and hands-on development.', 'Outcome: certified practitioners'],
+  [IMG.mentorship, 'Coding bootcamps & mentorship', 'Free and low-cost bootcamps with mentorship for women, minorities and underserved communities.', 'Outcome: job-ready skills'],
+  [IMG.workshop, 'AI-powered education tools', 'Platforms for local schools and digital-literacy outreach in rural areas.', 'Outcome: wider access'],
 ];
 
 const UNI_FEATURES: [string, string, string][] = [
@@ -57,12 +58,12 @@ export default function ProgramsPage() {
         <div className="wrap">
           <div className="split">
             <Reveal>
-              <div className="kicker-num">PILLAR 01 — Startup &amp; Innovation</div>
+              <div className="kicker-num">PILLAR 01 · Startup &amp; Innovation</div>
               <h2 className="display-l" style={{ marginTop: 12 }}>
                 Incubator &amp; Accelerator
               </h2>
               <p className="lede mt-m">
-                We help founders bridge research and commercialization — providing guidance,
+                We help founders bridge research and commercialization, providing guidance,
                 technology access, community, funding connections, investor networking and business
                 development to build globally competitive AI startups.
               </p>
@@ -71,14 +72,14 @@ export default function ProgramsPage() {
                   Apply to the program
                 </Button>
                 <span className="slot" style={{ alignSelf: 'center' }}>
-                  [ Application form — to be added ]
+                  [ Application form, to be added ]
                 </span>
               </div>
             </Reveal>
             <Reveal delay={120}>
-              <ImageSlot label="PHOTO · founders / demo day" ratio="tall" />
+              <Photo src={IMG.networking} alt="AI Hub accelerator cohort networking" ratio="tall" sizes="(max-width: 900px) 100vw, 45vw" />
               <div className="caption">
-                <span className="dot">●</span> Accelerator cohort · Tirana · [date]
+                <span className="dot">●</span> Accelerator cohort · Tirana
               </div>
             </Reveal>
           </div>
@@ -106,20 +107,20 @@ export default function ProgramsPage() {
         <div className="wrap">
           <Reveal className="wrap-end">
             <div>
-              <div className="kicker-num">PILLAR 02 — Education &amp; Training</div>
+              <div className="kicker-num">PILLAR 02 · Education &amp; Training</div>
               <h2 className="display-l" style={{ marginTop: 12 }}>
                 Education &amp; Training
               </h2>
             </div>
             <p className="muted measure" style={{ maxWidth: '38ch' }}>
-              Inclusive by design — with dedicated tracks for women, minorities and underserved
+              Inclusive by design, with dedicated tracks for women, minorities and underserved
               communities.
             </p>
           </Reveal>
           <div className="grid g-3 mt-l">
             {EDU.map(([img, h, p, out], i) => (
               <Reveal key={h} delay={i * 80} className="card" style={{ overflow: 'hidden' }}>
-                <ImageSlot label={img} ratio="wide" framed={false} />
+                <Photo src={img} alt={h} ratio="wide" sizes="(max-width: 900px) 100vw, 33vw" />
                 <div style={{ padding: 24 }}>
                   <h4 className="display-s">{h}</h4>
                   <p className="muted" style={{ fontSize: 14.5 }}>
@@ -142,7 +143,7 @@ export default function ProgramsPage() {
               <h2 className="display-l">A partnership track for academia.</h2>
               <p className="lede mt-m">
                 We co-develop curricula, host joint research, run guest lectures and connect students
-                to real projects. Nine universities already partner with us — there&apos;s room for
+                to real projects. Nine universities already partner with us, and there&apos;s room for
                 more.
               </p>
               <div className="mt-m">

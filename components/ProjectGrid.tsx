@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { PROJECTS, PROJECT_FILTERS } from '@/lib/content';
-import { Tag, TextLink } from './ui/primitives';
+import { Tag, TextLink, Photo } from './ui/primitives';
 
 export default function ProjectGrid() {
   const [filter, setFilter] = useState('All');
@@ -46,7 +46,11 @@ export default function ProjectGrid() {
               </>
             ) : (
               <>
-                <div className="img-slot" data-label="PROJECT HERO · [slot]" />
+                {p.image ? (
+                  <Photo src={p.image} alt={p.t} ratio="4x3" sizes="(max-width: 900px) 100vw, 33vw" />
+                ) : (
+                  <div className="img-slot" data-label="PROJECT HERO · [slot]" />
+                )}
                 <div className="pc-body">
                   <div className="pc-tags">
                     <Tag>{p.d}</Tag>

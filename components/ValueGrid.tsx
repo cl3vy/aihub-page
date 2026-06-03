@@ -1,6 +1,6 @@
 import Reveal from './ui/Reveal';
 
-/** Numbered "value" cards — reused for values, benefits, and event formats. */
+/** Numbered "value" cards, reused for values, benefits, and event formats. */
 export default function ValueGrid({
   items,
   columns = 3,

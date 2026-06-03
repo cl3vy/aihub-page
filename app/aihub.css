@@ -1,5 +1,5 @@
 /* ============================================================
-   AI HUB — Institutional Design System (Reformed)
+   AI HUB · Institutional Design System (Reformed)
    Porcelain ground · deep navy ink · refined azure accent
    Fonts are injected via next/font as CSS variables.
    ============================================================ */
@@ -314,7 +314,7 @@ a.chip:hover { border-color: var(--ink); transform: translateY(-1px); }
 .rule { height: 1px; background: var(--hairline); border: 0; margin: 0; }
 
 /* ----------------------------------------------------------- */
-/* NAV — transparent over hero, solidifies on scroll           */
+/* NAV · transparent over hero, solidifies on scroll           */
 /* ----------------------------------------------------------- */
 .nav {
   position: fixed; top: 0; left: 0; right: 0;
@@ -458,7 +458,7 @@ a.chip:hover { border-color: var(--ink); transform: translateY(-1px); }
 }
 
 /* ----------------------------------------------------------- */
-/* Dark panel — deep navy with gradient depth                  */
+/* Dark panel · deep navy with gradient depth                  */
 /* ----------------------------------------------------------- */
 .dark {
   background:

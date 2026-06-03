@@ -6,7 +6,7 @@ import { Eyebrow, Chip, ImageSlot, PageHeader, CtaBand } from '@/components/ui/p
 export const metadata: Metadata = {
   title: 'Contact',
   description:
-    'Get in touch with AI Hub — general, partnership, incubator, and press enquiries. Tirana, Albania.',
+    'Get in touch with AI Hub: general, partnership, incubator, and press enquiries. Tirana, Albania.',
 };
 
 const SOCIALS: [string, string][] = [
@@ -25,7 +25,7 @@ export default function ContactPage() {
         watermark="HELLO"
         eyebrow="Contact"
         title="Let's talk."
-        lede="Whether you want to join, partner, apply to the incubator, or write about us — we'd love to hear from you."
+        lede="Whether you want to join, partner, apply to the incubator, or write about us, we'd love to hear from you."
       />
 
       <section className="section-tight">

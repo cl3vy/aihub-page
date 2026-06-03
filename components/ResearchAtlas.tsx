@@ -69,7 +69,7 @@ export default function ResearchAtlas({ short = false }: { short?: boolean }) {
                 </div>
                 <div>
                   <div className="eyebrow no-rule">Lead researcher</div>
-                  <div className="slot-line">[ Lead — to be assigned ]</div>
+                  <div className="slot-line">[ Lead, to be assigned ]</div>
                   <div className="eyebrow no-rule" style={{ marginTop: 26 }}>
                     Related projects
                   </div>

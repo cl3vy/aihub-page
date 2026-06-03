@@ -7,7 +7,7 @@ const W = 600;
 const H = 260;
 const PAD = 36;
 
-/* ===== Community growth — area + line, gridlines, hover guide ===== */
+/* ===== Community growth: area + line, gridlines, hover guide ===== */
 const GROWTH = [0.04, 0.07, 0.12, 0.18, 0.27, 0.36, 0.48, 0.6, 0.74, 0.86, 1];
 const GROWTH_LABELS = ['', "'24", '', '', "'25", '', '', "'26", '', '', 'now'];
 
@@ -110,13 +110,13 @@ export function GrowthChart() {
         <span className="legend-item">
           <span className="legend-swatch solid" /> Members over time
         </span>
-        <span className="legend-item">— Endpoint is the actual figure</span>
+        <span className="legend-item">Endpoint is the actual figure</span>
       </div>
     </div>
   );
 }
 
-/* ===== Activity by format — animated bars, hover, legend ===== */
+/* ===== Activity by format: animated bars, hover, legend ===== */
 type Bar = { l: string; v: number; proj?: boolean };
 
 export function BarChart({ data }: { data: Bar[] }) {

@@ -4,13 +4,14 @@ import Counter from '@/components/ui/Counter';
 import ValueGrid from '@/components/ValueGrid';
 import JoinForm from '@/components/JoinForm';
 import PartnerWall from '@/components/PartnerWall';
-import { Eyebrow, Chip, PageHeader, CtaBand } from '@/components/ui/primitives';
-import { BENEFITS, CHANNELS } from '@/lib/content';
+import Image from 'next/image';
+import { Eyebrow, Chip, Photo, PageHeader, CtaBand } from '@/components/ui/primitives';
+import { BENEFITS, CHANNELS, IMG, LOGO } from '@/lib/content';
 
 export const metadata: Metadata = {
   title: 'Community',
   description:
-    "Join 1,000+ members building Albania's AI future — education, events, startup support and ethical-AI advocacy.",
+    "Join 1,000+ members building Albania's AI future: education, events, startup support and ethical-AI advocacy.",
 };
 
 const BENEFIT_ITEMS = BENEFITS.map(
@@ -78,12 +79,18 @@ export default function CommunityPage() {
               <Eyebrow>Who it&apos;s for</Eyebrow>
               <h2 className="display-l">Everyone with a stake in AI.</h2>
               <p className="lede mt-m">
-                You don&apos;t need a PhD — you need curiosity. Our members range from first-year
+                You don&apos;t need a PhD, you need curiosity. Our members range from first-year
                 students to senior researchers and policymakers.
               </p>
             </Reveal>
             <Reveal delay={120}>
-              <div className="flex" style={{ gap: 10, flexWrap: 'wrap' }}>
+              <Photo
+                src={IMG.networking}
+                alt="AI Hub members networking at the community space"
+                ratio="wide"
+                sizes="(max-width: 900px) 100vw, 45vw"
+              />
+              <div className="flex mt-m" style={{ gap: 10, flexWrap: 'wrap' }}>
                 {WHO.map((w) => (
                   <Chip key={w}>{w}</Chip>
                 ))}
@@ -150,7 +157,11 @@ export default function CommunityPage() {
                   href={href}
                   style={{ padding: 28, display: 'flex', flexDirection: 'column', gap: 6 }}
                 >
-                  <div className="kicker-num">{String(i + 1).padStart(2, '0')}</div>
+                  {name === 'Telegram' ? (
+                    <Image src={LOGO.telegram} alt="" width={26} height={26} style={{ marginBottom: 4 }} />
+                  ) : (
+                    <div className="kicker-num">{String(i + 1).padStart(2, '0')}</div>
+                  )}
                   <h4 className="display-s" style={{ marginTop: 8 }}>
                     {name}
                   </h4>
@@ -164,8 +175,24 @@ export default function CommunityPage() {
         </div>
       </section>
 
-      {/* PARTNERS */}
+      {/* MOMENTS */}
       <section className="section tint">
+        <div className="wrap">
+          <Reveal>
+            <Eyebrow>Moments</Eyebrow>
+            <h2 className="display-l">From our community.</h2>
+          </Reveal>
+          <Reveal className="gallery-strip mt-l">
+            <Photo src={IMG.workshop} alt="AI Hub workshop" ratio="4x3" sizes="(max-width: 900px) 50vw, 25vw" />
+            <Photo src={IMG.discussion} alt="Members in discussion" ratio="4x3" sizes="(max-width: 900px) 50vw, 25vw" />
+            <Photo src={IMG.graduation} alt="Cohort graduation" ratio="4x3" sizes="(max-width: 900px) 50vw, 25vw" />
+            <Photo src={IMG.audienceFront} alt="Engaged audience" ratio="4x3" sizes="(max-width: 900px) 50vw, 25vw" />
+          </Reveal>
+        </div>
+      </section>
+
+      {/* PARTNERS */}
+      <section className="section">
         <div className="wrap">
           <Reveal>
             <Eyebrow>Universities &amp; partners</Eyebrow>

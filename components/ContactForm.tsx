@@ -57,7 +57,7 @@ export default function ContactForm() {
           Send message <span className="arrow">→</span>
         </button>
         <p className="caption" style={{ justifyContent: 'center', marginTop: 14 }}>
-          [ Connected to contact inbox — slot ]
+          [ Connected to contact inbox, slot ]
         </p>
       </form>
     </div>

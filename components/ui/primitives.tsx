@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import type { ReactNode, CSSProperties } from 'react';
 import Reveal from './Reveal';
 
@@ -120,6 +121,31 @@ export function ImageSlot({
       className={`img-slot ratio-${ratio}${framed ? ' frame' : ''} ${className}`.trim()}
       data-label={label}
     />
+  );
+}
+
+/* ---------- Real photo (framed + graded) ---------- */
+export function Photo({
+  src,
+  alt,
+  ratio = 'wide',
+  className = '',
+  graded = true,
+  priority = false,
+  sizes = '(max-width: 900px) 100vw, 50vw',
+}: {
+  src: string;
+  alt: string;
+  ratio?: 'wide' | 'tall' | 'sq' | 'cine' | '4x3';
+  className?: string;
+  graded?: boolean;
+  priority?: boolean;
+  sizes?: string;
+}) {
+  return (
+    <div className={`frame photo ratio-${ratio}${graded ? ' graded' : ''} ${className}`.trim()}>
+      <Image src={src} alt={alt} fill sizes={sizes} priority={priority} style={{ objectFit: 'cover' }} />
+    </div>
   );
 }
 

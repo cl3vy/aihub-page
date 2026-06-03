@@ -3,8 +3,8 @@ import Reveal from '@/components/ui/Reveal';
 import Counter from '@/components/ui/Counter';
 import ResearchAtlas from '@/components/ResearchAtlas';
 import Pipeline, { type Stage } from '@/components/Pipeline';
-import { Eyebrow, ImageSlot, PageHeader, CtaBand } from '@/components/ui/primitives';
-import { DOMAINS } from '@/lib/content';
+import { Eyebrow, Photo, PageHeader, CtaBand } from '@/components/ui/primitives';
+import { DOMAINS, DOMAIN_IMAGES } from '@/lib/content';
 
 export const metadata: Metadata = {
   title: 'Research',
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 const PIPELINE: Stage[] = [
   { step: 'STAGE 01', title: 'Research', body: 'Define the problem, review the field, and establish rigorous methods and data.' },
   { step: 'STAGE 02', title: 'Prototype', body: 'Build a working proof of concept and validate it against real conditions.' },
-  { step: 'STAGE 03', title: 'Pilot', body: 'Test with partners in the field — universities, NGOs, public institutions.' },
+  { step: 'STAGE 03', title: 'Pilot', body: 'Test with partners in the field: universities, NGOs, public institutions.' },
   { step: 'STAGE 04', title: 'Deployment / Policy', body: 'Ship the tool, or translate findings into policy and lasting practice.' },
 ];
 
@@ -26,7 +26,7 @@ export default function ResearchPage() {
         watermark="ATLAS"
         eyebrow="Research"
         title="Rigorous research, pointed at problems that matter."
-        lede="Our philosophy is simple: research should be ethical, applied, and accountable. We work where strong methods meet real needs in Albania — and we hold ourselves to international standards."
+        lede="Our philosophy is simple: research should be ethical, applied, and accountable. We work where strong methods meet real needs in Albania, and we hold ourselves to international standards."
       >
         <Reveal immediate delay={240}>
           <div className="hero-counters" style={{ marginTop: 40 }}>
@@ -61,7 +61,7 @@ export default function ResearchPage() {
               <h2 className="display-l">Seven domains. Click to explore.</h2>
             </div>
             <p className="muted measure" style={{ maxWidth: '36ch' }}>
-              A navigable map of where AI Hub focuses — each domain opens to its aims and directions.
+              A navigable map of where AI Hub focuses. Each domain opens to its aims and directions.
             </p>
           </Reveal>
           <Reveal className="mt-l">
@@ -77,7 +77,7 @@ export default function ResearchPage() {
             <Eyebrow>Methodology</Eyebrow>
             <h2 className="display-l">From research to the real world.</h2>
             <p className="lede mt-s measure">
-              Every initiative moves along the same path — so good ideas don&apos;t stall in a
+              Every initiative moves along the same path, so good ideas don&apos;t stall in a
               paper. The line draws as research becomes deployment and policy.
             </p>
           </Reveal>
@@ -100,7 +100,13 @@ export default function ResearchPage() {
                   <h3 className="display-m" style={{ marginTop: 10 }}>
                     {d.name}
                   </h3>
-                  <ImageSlot label={`TREATED PHOTO · ${d.short}`} ratio="wide" className="mt-m" />
+                  <Photo
+                    src={DOMAIN_IMAGES[d.short]}
+                    alt={`${d.name}, AI Hub`}
+                    ratio="wide"
+                    className="mt-m"
+                    sizes="(max-width: 820px) 100vw, 40vw"
+                  />
                 </div>
                 <div>
                   <p className="lede">{d.aim}</p>
@@ -119,8 +125,8 @@ export default function ResearchPage() {
                     ))}
                   </ul>
                   <div style={{ display: 'flex', gap: 14, flexWrap: 'wrap', marginTop: 24 }}>
-                    <span className="slot">Lead — [ to be assigned ]</span>
-                    <span className="slot">Related projects — [ in progress ]</span>
+                    <span className="slot">Lead: [ to be assigned ]</span>
+                    <span className="slot">Related projects: [ in progress ]</span>
                   </div>
                 </div>
               </Reveal>
@@ -141,7 +147,7 @@ export default function ResearchPage() {
           </Reveal>
           <Reveal className="empty-card mt-l" style={{ minHeight: 200 }}>
             <div className="em-ic">+</div>
-            <div className="em-label">Publications &amp; reports — coming soon</div>
+            <div className="em-label">Publications &amp; reports, coming soon</div>
             <p className="muted" style={{ fontSize: 13.5, maxWidth: '40ch', margin: 0 }}>
               We don&apos;t list work we haven&apos;t published. This space is reserved for
               peer-reviewed papers, technical reports and open-source releases.

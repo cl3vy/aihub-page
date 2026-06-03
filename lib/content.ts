@@ -1,5 +1,5 @@
 /* ============================================================
-   AI HUB — Site content (single source of truth)
+   AI HUB · Site content (single source of truth)
    All page copy/data lives here so pages stay declarative.
    ============================================================ */
 
@@ -27,7 +27,7 @@ export const DOMAINS: Domain[] = [
     short: 'Education',
     aim: 'AI-ethics and development certifications, free and low-cost bootcamps and mentorship for women, minorities and underserved communities, AI-powered platforms for local schools, and inclusive tools for students with disabilities.',
     dirs: ['Bootcamps & mentorship', 'AI tools for local schools', 'Inclusive learning tech'],
-    why: 'A skilled, inclusive talent base is the foundation for everything else — and it must reach everyone.',
+    why: 'A skilled, inclusive talent base is the foundation for everything else, and it must reach everyone.',
   },
   {
     n: '03',
@@ -65,15 +65,15 @@ export const DOMAINS: Domain[] = [
     n: '07',
     name: 'Community Engagement',
     short: 'Community',
-    aim: 'Public programs, events and outreach that bring people into the conversation around AI — meetups, hackathons, talks and open forums that turn a research agenda into a shared, participatory community.',
+    aim: 'Public programs, events and outreach that bring people into the conversation around AI: meetups, hackathons, talks and open forums that turn a research agenda into a shared, participatory community.',
     dirs: ['Meetups & hackathons', 'Public lectures', 'Open community forums'],
-    why: 'Research only matters if people are part of it — engagement is how the work stays accountable.',
+    why: 'Research only matters if people are part of it, and engagement is how the work stays accountable.',
   },
 ];
 
 export const VOICES = [
   {
-    q: 'Co-founded AI Hub to grow a world-class, collaborative AI community in Albania — bridging rigorous research with real-world impact.',
+    q: 'Co-founded AI Hub to grow a world-class, collaborative AI community in Albania, bridging rigorous research with real-world impact.',
     n: 'Emiliano Mankolli, PhD',
     r: 'Co-Founder & CEO · Lecturer, Data Science & AI · Tirana',
   },
@@ -95,11 +95,11 @@ export const VOICES = [
 ];
 
 export const VALUES: [string, string, string][] = [
-  ['01', 'Ethics', 'Responsible, transparent AI is the precondition for everything we build — not a feature added later.'],
-  ['02', 'Innovation', 'We pursue novel, rigorous work — and the courage to apply it to real problems.'],
+  ['01', 'Ethics', 'Responsible, transparent AI is the precondition for everything we build, not a feature added later.'],
+  ['02', 'Innovation', 'We pursue novel, rigorous work, and the courage to apply it to real problems.'],
   ['03', 'Impact', 'We measure ourselves by outcomes for people and institutions, not by output.'],
   ['04', 'Collaboration', 'Open community, shared knowledge, and partnership across academia, industry and government.'],
-  ['05', 'Lifelong learning', 'Education for everyone — students, professionals, and underserved communities alike.'],
+  ['05', 'Lifelong learning', 'Education for everyone: students, professionals, and underserved communities alike.'],
 ];
 
 export type Person = { name: string; role: string; place: string; focus: string; open?: boolean };
@@ -114,12 +114,12 @@ export const TEAM: Person[] = [
   { name: 'You?', role: 'Open role · Researcher / Contributor', place: 'Anywhere', focus: 'We are always looking for people who want to build.', open: true },
 ];
 
-export type Project = { d: string; t: string; s: string; empty?: boolean };
+export type Project = { d: string; t: string; s: string; empty?: boolean; image?: string };
 export const PROJECTS: Project[] = [
-  { d: 'Governance', t: 'Civic participation tooling', s: 'AI that widens citizen input into local-government decisions.' },
-  { d: 'Environment', t: 'Air-quality monitoring', s: 'Sensing and modelling urban air quality for health and policy.' },
-  { d: 'Policy', t: 'Legislative drafting assistant', s: 'Tools to help draft and review legislation and flag unintended effects.' },
-  { d: 'Public Health', t: 'Outbreak prediction', s: 'Predictive surveillance and resource distribution for the health system.' },
+  { d: 'Governance', t: 'Civic participation tooling', s: 'AI that widens citizen input into local-government decisions.', image: '/assets/images/event-talk.jpg' },
+  { d: 'Environment', t: 'Air-quality monitoring', s: 'Sensing and modelling urban air quality for health and policy.', image: '/assets/images/panel-climate.jpg' },
+  { d: 'Policy', t: 'Legislative drafting assistant', s: 'Tools to help draft and review legislation and flag unintended effects.', image: '/assets/images/legal-ai.jpg' },
+  { d: 'Public Health', t: 'Outbreak prediction', s: 'Predictive surveillance and resource distribution for the health system.', image: '/assets/images/conference.jpg' },
   { d: 'Education', t: 'School AI platform', s: 'AI-powered learning tools piloted with local schools.', empty: true },
   { d: 'Social Impact', t: 'NGO accelerator tooling', s: 'Open tools that help non-profits do more with less.', empty: true },
 ];
@@ -127,7 +127,7 @@ export const PROJECTS: Project[] = [
 export const PROJECT_FILTERS = ['All', 'Policy', 'Education', 'Social Impact', 'Public Health', 'Environment', 'Governance'];
 
 export const FORMATS: [string, string][] = [
-  ['Meetups', 'Regular community gatherings — talks, demos and time to connect.'],
+  ['Meetups', 'Regular community gatherings: talks, demos and time to connect.'],
   ['Hackathons', 'Intense build sprints on real problems across the domains.'],
   ['Public lectures', 'Open talks that bring AI to a wider, non-technical audience.'],
   ['Policy discussions', 'Roundtables on regulation, ethics and national AI strategy.'],
@@ -135,7 +135,7 @@ export const FORMATS: [string, string][] = [
 ];
 
 export const BENEFITS: [string, string][] = [
-  ['AI education', 'Bootcamps, certifications and mentorship — with inclusive tracks for those underrepresented in tech.'],
+  ['AI education', 'Bootcamps, certifications and mentorship, with inclusive tracks for those underrepresented in tech.'],
   ['Networking', 'Meet peers and mentors through events, meetups and hackathons.'],
   ['Startup support', 'Access the incubator, technology, and connections to capital.'],
   ['Ethical-AI voice', 'Join discussion and policy advocacy on how AI should be built and governed.'],
@@ -159,6 +159,45 @@ export const UNIVERSITIES = [
   'Fan S. Noli',
   'University of Korçë',
 ];
+
+/* ---- Asset paths (real photography + brand) ---- */
+export const IMG = {
+  eventTalk: '/assets/images/event-talk.jpg',
+  eventTalkSq: '/assets/images/event-talk-sq.png',
+  audience1: '/assets/images/audience-1.jpg',
+  audience2: '/assets/images/audience-2.jpg',
+  audienceFront: '/assets/images/audience-front.jpg',
+  conference: '/assets/images/conference.jpg',
+  panelClimate: '/assets/images/panel-climate.jpg',
+  legalAi: '/assets/images/legal-ai.jpg',
+  officeMeeting: '/assets/images/office-meeting.jpg',
+  officeMeetingSq: '/assets/images/office-meeting-sq.png',
+  graduation: '/assets/images/graduation.jpg',
+  workshop: '/assets/images/workshop.jpg',
+  discussion: '/assets/images/discussion.jpg',
+  mentorship: '/assets/images/mentorship.png',
+  teamGroup: '/assets/images/team-group.png',
+  networking: '/assets/images/networking.png',
+};
+
+export const LOGO = {
+  landscape: '/assets/logos/logo-landscape.png',
+  stacked: '/assets/logos/logo-stacked.png',
+  full: '/assets/logos/aihub-logo.png',
+  telegram: '/assets/logos/telegram.png',
+  icon: '/assets/images/aihub-icon.png',
+};
+
+/** Domain → representative photo (keyed by Domain.short). */
+export const DOMAIN_IMAGES: Record<string, string> = {
+  Policy: IMG.legalAi,
+  Education: IMG.mentorship,
+  'Social Impact': IMG.discussion,
+  'Public Health': IMG.conference,
+  Environment: IMG.panelClimate,
+  Governance: IMG.audienceFront,
+  Community: IMG.networking,
+};
 
 export const ACTIVITY_BARS = [
   { l: 'Meetups', v: 9 },

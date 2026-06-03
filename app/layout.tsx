@@ -31,11 +31,15 @@ const mono = IBM_Plex_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL('https://aihub.al'),
   title: {
-    default: 'AI Hub — Advancing AI research, education & innovation in Albania',
-    template: '%s — AI Hub',
+    default: 'AI Hub · Advancing AI research, education & innovation in Albania',
+    template: '%s · AI Hub',
   },
   description:
     'AI Hub is a non-profit advancing AI research, education, and innovation in Albania and its diaspora. Where AI meets ethics, innovation, and impact.',
+  icons: {
+    icon: '/assets/images/aihub-icon.png',
+    apple: '/assets/images/aihub-icon.png',
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
